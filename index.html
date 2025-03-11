@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Random Verse Image</title>
-    <script>
-        // List of Imgur image URLs
-        var urls = [
-            "https://www.google.com",
-            "https://www.youtube.com",
-            "https://www.reddit.com"
-        ];
-
-        // Pick a random URL
-        var randomUrl = urls[Math.floor(Math.random() * urls.length)];
-
-        // Redirect to the chosen URL
-        window.location.href = randomUrl;
-    </script>
+  <meta charset="UTF-8">
+  <title>Random Verse Image</title>
+  <script defer>
+    const urls = [
+      "https://www.google.com",
+      "https://www.youtube.com",
+      "https://www.reddit.com"
+    ];
+    const randomUrl = urls[Math.floor(Math.random() * urls.length)];
+    
+    // Redirect immediately
+    window.location.href = randomUrl;
+    
+    // Update fallback link once DOM is ready
+    document.addEventListener("DOMContentLoaded", () => {
+      const redirectLink = document.getElementById("redirect-link");
+      if (redirectLink) {
+        redirectLink.href = randomUrl;
+      }
+    });
+  </script>
 </head>
 <body>
-    <p>Redirecting to a random verse image... If not redirected, <a id="redirect-link" href="#">click here</a>.</p>
-    <script>
-        document.getElementById("redirect-link").href = randomUrl;
-    </script>
+  <p>Redirecting to a random verse image... If not redirected, <a id="redirect-link" href="#">click here</a>.</p>
 </body>
 </html>
