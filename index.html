@@ -3,6 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <title>Random Verse Image</title>
+  <style>
+    /* Remove default margins and ensure the html/body take full height */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    /* Center content and hide any overflow */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      background-color: #000; /* Optional: provides a background color if needed */
+    }
+    /* Make the image fill the screen while preserving its aspect ratio */
+    #verseImage {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+    }
+  </style>
   <script defer>
     // List of image paths relative to your GitHub Pages site
     const images = [
@@ -25,3 +47,4 @@
   <p>If your image does not load, try refreshing the page.</p>
 </body>
 </html>
+
