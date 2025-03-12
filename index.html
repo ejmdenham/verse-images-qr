@@ -4,26 +4,24 @@
   <meta charset="UTF-8">
   <title>Random Verse Image</title>
   <script defer>
-    const urls = [
-      "https://imgur.com/gallery/please-just-leave-phakED2",
-      "https://imgur.com/gallery/you-0cLGz4k",
-      "https://imgur.com/gallery/i-beat-type-2-diabetes-FCONsDN"
+    // List of image paths relative to your GitHub Pages site
+    const images = [
+      "images/god-loves-you-john-3-16-18-new-king-james-version-l.jpg",
+      "images/john-3-16-21-l.jpg"
     ];
-    const randomUrl = urls[Math.floor(Math.random() * urls.length)];
     
-    // Redirect immediately
-    window.location.href = randomUrl;
+    const randomImage = images[Math.floor(Math.random() * images.length)];
     
-    // Update fallback link once DOM is ready
     document.addEventListener("DOMContentLoaded", () => {
-      const redirectLink = document.getElementById("redirect-link");
-      if (redirectLink) {
-        redirectLink.href = randomUrl;
+      const verseImage = document.getElementById("verseImage");
+      if (verseImage) {
+        verseImage.src = randomImage;
       }
     });
   </script>
 </head>
 <body>
-  <p>Redirecting to a random verse image... If not redirected, <a id="redirect-link" href="#">click here</a>.</p>
+  <img id="verseImage" src="" alt="Verse Image">
+  <p>If your image does not load, try refreshing the page.</p>
 </body>
 </html>
